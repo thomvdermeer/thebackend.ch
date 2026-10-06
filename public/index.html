@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Being Human — a one-day workshop in Zürich | hyht</title>
-    <meta name="description" content="Simple practices to enrich and balance your daily life. A one-day workshop for personal transformation with Rieneke, Divina and Thom. Saturday 21 November 2026, 09:30–16:00 (doors 09:00), Dorfzentrum Albisrieden, Zürich.">
+    <meta name="description" content="Simple practices to enrich and balance your daily life. A one-day workshop for personal transformation with Rieneke, Divina and Thom. Saturday 21 November 2026, 09:00–16:00, Dorfzentrum Albisrieden, Zürich.">
     <meta property="og:title" content="Being Human — a one-day workshop in Zürich">
     <meta property="og:description" content="Simple practices to enrich and balance your daily life — mind, nature, movement and breath. Saturday 21 November 2026, Dorfzentrum Albisrieden.">
     <meta property="og:type" content="website">
@@ -32,15 +32,15 @@
             startTime: "09:00",                             // calendar start = doors open
             endTime: "16:00",
             dateDisplay: "Saturday 21 November 2026",
-            timeDisplay: "09:30 – 16:00",
-            doorsNote: "Doors open 09:00",
+            timeDisplay: "09:00 – 16:00",
+            doorsNote: "We begin at 09:30",
             pillDate: "21 Nov · Albisrieden",
 
             venueName: "Dorfzentrum Albisrieden",
-            venueAddress: "Albisrieden, 8047 Zürich",
-            venueMapUrl: "https://maps.google.com/?q=Dorfzentrum+Albisrieden,+Z%C3%BCrich",
+            venueAddress: "Triemlistrasse 2, 8047 Zürich",
+            venueMapUrl: "https://maps.google.com/?q=Dorfzentrum+Albisrieden,+Triemlistrasse+2,+8047+Z%C3%BCrich",
 
-            capacity: 0,                                    // 0 = don't show a capacity line
+            capacity: 8,                                    // 0 = don't show a capacity line
             spotsLeftNote: "",                              // e.g. "Only a few places left" — shown if set
 
             /* Launch pricing: everyone pays priceLaunch; priceRegular is shown
@@ -69,34 +69,19 @@
                 cover: "images/cover.jpg",                  // poster — hero + social preview
             },
 
-            /* The three practitioners (icons from the poster). Add photo: "images/rieneke.jpg"
-               to replace an icon with a portrait. */
+            /* The three practitioners: portrait with the poster icon as a badge. */
             practitioners: [
-                { icon: "images/icon-mind.jpg", name: "Rieneke", url: "https://rieneke-deelstra.com/en-evolve-light/",
+                { photo: "images/rieneke.jpg", icon: "images/icon-mind.png", name: "Rieneke", url: "https://rieneke-deelstra.com/en-evolve-light/",
                   role: "psychodynamic therapist & organisational psychologist",
                   text: "helps you get to know your inner instruments, so you can navigate life with more clarity." },
-                { icon: "images/icon-nature.jpg", name: "Divina", url: "https://hyht.ch/team",
+                { photo: "images/divina.jpg", icon: "images/icon-nature.png", name: "Divina", url: "https://hyht.ch/team",
                   role: "ecologist, artist & forest bathing guide",
                   text: "invites you to open your senses and experience yourself as part of nature, through play and creative expression." },
-                { icon: "images/icon-move.jpg", name: "Thom", url: "https://hyht.ch/team",
+                { photo: "images/thom.jpg", icon: "images/icon-move.png", name: "Thom", url: "https://hyht.ch/team",
                   role: "neuroscientist, movement & breathwork professional",
                   text: "shares science-backed ways of moving and breathing that you can keep for life." },
             ],
 
-            /* The day — durations as planned; "when" is shown only for the fixed anchors. */
-            program: [
-                { when: "09:00", length: "30 min", title: "Drop-in", text: "Arrive, have a tea, settle in." },
-                { when: "09:30", length: "30 min", title: "Welcome", text: "What this day is for, and how we will spend it together." },
-                { length: "1 h", title: "Getting to know each other", text: "Who is in the room, and what each of us is looking for today." },
-                { length: "30 min", title: "Your inner instruments", text: "With Rieneke — a guided look at the physical, emotional, mental and spiritual instruments you carry, followed by sharing what you noticed." },
-                { length: "Break", title: "Lunch", text: "Lunch is provided." },
-                { length: "30 min", title: "Breath & movement", text: "With Thom — how to use the breath in stressful situations, and feel for yourself how it changes your body." },
-                { length: "15 min", title: "The science behind it", text: "Why calm follows the breath: the nervous system, and what that means on an ordinary day." },
-                { length: "1 h", title: "Nervous system meets nature", text: "Exercises that combine scientific principles with the natural environment and the breath — a deep experience, with examples to take home." },
-                { length: "2 h", title: "Charging your battery in nature", text: "With Divina — how the body regulates itself through nature, colours and the senses; creativity and flow like a child; a conscious walk in nature." },
-                { length: "45 min", title: "Looking back", text: "Gathering what the day gave you, and what you will carry home." },
-                { when: "16:00", title: "Close" },
-            ],
         };
 
         tailwind.config = {
@@ -231,8 +216,7 @@
     <div aria-hidden="true" class="absolute -right-40 -top-20 w-[30rem] h-[30rem] bg-sage/25 blur-3xl drift"></div>
     <div class="relative max-w-6xl mx-auto">
         <p class="reveal text-primary tracking-[.25em] uppercase text-sm mb-6">Three doorways</p>
-        <h2 class="reveal font-display font-medium text-4xl md:text-5xl text-deep mb-6">A full day with three practitioners.</h2>
-        <p class="reveal text-xl md:text-2xl font-light text-ink/80 mb-16 max-w-3xl">Each of them opens a different doorway.</p>
+        <h2 class="reveal font-display font-medium text-4xl md:text-5xl text-deep mb-16">A full day with three practitioners.</h2>
         <div id="practitioners" class="grid md:grid-cols-3 gap-12 md:gap-10"></div>
 
         <div class="reveal mt-24 md:mt-28 max-w-3xl">
@@ -242,16 +226,6 @@
                 <p class="text-deep">You will leave feeling calm, connected and clear about what matters most to you.</p>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- ============ THE DAY ============ -->
-<section class="px-6 md:px-12 py-24 md:py-32">
-    <div class="max-w-4xl mx-auto">
-        <p class="reveal text-primary tracking-[.25em] uppercase text-sm mb-6">The day</p>
-        <h2 class="reveal font-display font-medium text-4xl md:text-5xl text-deep mb-4">One day, one gentle arc.</h2>
-        <p class="reveal text-ink/60 text-lg mb-14">Doors open at 09:00 — we begin together at 09:30 and close at 16:00.</p>
-        <ol id="program"></ol>
     </div>
 </section>
 
@@ -380,8 +354,13 @@
     /* practitioners */
     $("practitioners").innerHTML = EVENT.practitioners.map((p, i) => `
         <article class="reveal flex flex-col" style="transition-delay:${i * 140}ms">
-            <div class="blob overflow-hidden w-32 h-32 md:w-36 md:h-36 mb-8 shadow-lg ring-8 ring-paper/70">
-                <img src="${p.photo || p.icon}" alt="${p.photo ? p.name : ""}" class="w-full h-full object-cover">
+            <div class="relative w-40 h-40 md:w-44 md:h-44 mb-8">
+                <div class="blob overflow-hidden w-full h-full shadow-lg ring-8 ring-paper/70">
+                    <img src="${p.photo}" alt="${p.name}" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-2 -right-2 w-16 h-16 md:w-[4.5rem] md:h-[4.5rem] rounded-full bg-primary shadow-md ring-4 ring-paper flex items-center justify-center">
+                    <img src="${p.icon}" alt="" class="w-11 h-11 md:w-12 md:h-12">
+                </div>
             </div>
             <h3 class="font-display font-medium text-2xl text-deep leading-snug">
                 <a href="${p.url}" target="_blank" rel="noopener" class="underline underline-offset-4 decoration-primary/30 hover:decoration-primary hover:text-primary transition">${p.name}</a>
@@ -389,13 +368,6 @@
             <p class="text-ink/60 text-sm italic mt-1">${p.role}</p>
             <p class="text-ink/80 font-light text-lg leading-relaxed mt-4 flex-1"><span class="text-deep">${p.name}</span> ${p.text}</p>
         </article>`).join("");
-
-    /* the day */
-    $("program").innerHTML = EVENT.program.map((b, i, all) => `
-        <li class="reveal flex gap-6 md:gap-10 py-5 border-t border-primary/15${i === all.length - 1 ? " border-b" : ""}">
-            <span class="w-20 md:w-24 shrink-0 text-primary font-semibold leading-snug">${b.when || ""}<span class="block text-ink/50 text-sm font-normal">${b.length || ""}</span></span>
-            <div><h3 class="font-semibold text-xl">${b.title}</h3>${b.text ? `<p class="text-ink/70 mt-1">${b.text}</p>` : ""}</div>
-        </li>`).join("");
 
     /* venue */
     $("venue-name").textContent = EVENT.venueName;
