@@ -20,6 +20,11 @@
 
 export default {
     async fetch(request, env) {
+        /* Only /webhook/stripe is ours; any other path that isn't a static
+           file (e.g. a typo) goes back to the event page. */
+        if (new URL(request.url).pathname !== "/webhook/stripe") {
+            return Response.redirect(new URL("/", request.url).toString(), 302);
+        }
         if (request.method !== "POST") {
             /* diagnostic: fingerprint (hash prefix + length) of the stored secrets —
                reveals nothing, but lets us confirm which values are configured */
