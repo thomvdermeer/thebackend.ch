@@ -1,0 +1,23 @@
+// Cloudflare Worker for beinghuman.thebackend.ch — the Being Human event page.
+// Static files live in public/ (the only folder that is ever served);
+// src/worker.js runs for /webhook/* only (Stripe → Brevo confirmation emails
+// for checkouts tagged metadata.event = "being-human-2026").
+//
+// Secrets (worker → Settings → Variables and Secrets):
+//   STRIPE_API_KEY  restricted key: Events read + Checkout Sessions read
+//   BREVO_API_KEY   xkeysib-... from Brevo → SMTP & API
+{
+    "name": "thebackend-beinghuman",
+    "main": "src/worker.js",
+    "compatibility_date": "2026-08-01",
+    "assets": {
+        "directory": "./public",
+        "run_worker_first": ["/webhook/*"]
+    },
+    "vars": {
+        // Brevo confirmation template + attendee list for Being Human
+        // (never the breathwork ones: template 9 / list 7).
+        "BREVO_TEMPLATE_ID": "",
+        "BREVO_LIST_ID": ""
+    }
+}

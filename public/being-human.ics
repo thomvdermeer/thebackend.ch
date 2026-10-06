@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hyht//Being Human//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:being-human-20261121@hyht.ch
+DTSTAMP:20261005T120000Z
+DTSTART:20261121T090000Z
+DTEND:20261121T150000Z
+SUMMARY:Being Human — hyht
+DESCRIPTION:Simple practices to enrich and balance your daily life. Details:
+  https://beinghuman.thebackend.ch/
+LOCATION:Dorfzentrum Albisrieden\, 8047 Zürich
+URL:https://beinghuman.thebackend.ch/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
