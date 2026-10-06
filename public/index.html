@@ -69,15 +69,15 @@
                 cover: "images/cover.jpg",                  // poster — hero + social preview
             },
 
-            /* The three practitioners: portrait with the poster icon as a badge. */
+            /* The three practitioners: portrait, flips over (like a coin) to the poster icon on hover. */
             practitioners: [
-                { photo: "images/rieneke.jpg", icon: "images/icon-mind.png", name: "Rieneke", url: "https://rieneke-deelstra.com/en-evolve-light/",
+                { photo: "images/rieneke.jpg", icon: "images/icon-mind.jpg", name: "Rieneke", url: "https://rieneke-deelstra.com/en-evolve-light/",
                   role: "psychodynamic therapist & organisational psychologist",
                   text: "helps you get to know your inner instruments, so you can navigate life with more clarity." },
-                { photo: "images/divina.jpg", icon: "images/icon-nature.png", name: "Divina", url: "https://hyht.ch/team",
+                { photo: "images/divina.jpg", icon: "images/icon-nature.jpg", name: "Divina", url: "https://hyht.ch/team",
                   role: "ecologist, artist & forest bathing guide",
                   text: "invites you to open your senses and experience yourself as part of nature, through play and creative expression." },
-                { photo: "images/thom.jpg", icon: "images/icon-move.png", name: "Thom", url: "https://hyht.ch/team",
+                { photo: "images/thom.jpg", icon: "images/icon-move.jpg", name: "Thom", url: "https://hyht.ch/team",
                   role: "neuroscientist, movement & breathwork professional",
                   text: "shares science-backed ways of moving and breathing that you can keep for life." },
             ],
@@ -138,6 +138,14 @@
         /* ---- hero: the poster's grass, softly blurred behind everything ---- */
         .hero-grass { background-size: cover; background-position: center; filter: blur(28px) saturate(1.05); transform: scale(1.15); }
         .hero-veil  { background: linear-gradient(180deg, rgba(251,251,246,.80) 0%, rgba(251,251,246,.70) 55%, rgba(251,251,246,1) 100%); }
+
+        /* ---- practitioner coin flip: portrait → poster icon on hover/focus ---- */
+        .coin { perspective: 1000px; }
+        .coin-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .9s cubic-bezier(.35,.1,.2,1); }
+        .coin:hover .coin-inner, .coin:focus-visible .coin-inner { transform: rotateY(180deg); }
+        .coin-face { position: absolute; inset: 0; border-radius: 9999px; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+        .coin-back { transform: rotateY(180deg); }
+        @media (prefers-reduced-motion: reduce) { .coin-inner { transition: none; } }
 
         .modal-backdrop { backdrop-filter: blur(8px); background: rgba(31,42,28,.35); }
 
@@ -354,12 +362,10 @@
     /* practitioners */
     $("practitioners").innerHTML = EVENT.practitioners.map((p, i) => `
         <article class="reveal flex flex-col" style="transition-delay:${i * 140}ms">
-            <div class="relative w-40 h-40 md:w-44 md:h-44 mb-8">
-                <div class="blob overflow-hidden w-full h-full shadow-lg ring-8 ring-paper/70">
-                    <img src="${p.photo}" alt="${p.name}" class="w-full h-full object-cover">
-                </div>
-                <div class="absolute -bottom-2 -right-2 w-16 h-16 md:w-[4.5rem] md:h-[4.5rem] rounded-full bg-primary shadow-md ring-4 ring-paper flex items-center justify-center">
-                    <img src="${p.icon}" alt="" class="w-11 h-11 md:w-12 md:h-12">
+            <div class="coin w-40 h-40 md:w-44 md:h-44 mb-8" tabindex="0" aria-label="${p.name}">
+                <div class="coin-inner">
+                    <div class="coin-face shadow-lg ring-8 ring-paper/70"><img src="${p.photo}" alt="${p.name}" class="w-full h-full object-cover"></div>
+                    <div class="coin-face coin-back shadow-lg ring-8 ring-paper/70"><img src="${p.icon}" alt="" loading="lazy" class="w-full h-full object-cover"></div>
                 </div>
             </div>
             <h3 class="font-display font-medium text-2xl text-deep leading-snug">
