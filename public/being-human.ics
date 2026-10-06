@@ -6,10 +6,11 @@ METHOD:PUBLISH
 BEGIN:VEVENT
 UID:being-human-20261121@hyht.ch
 DTSTAMP:20261005T120000Z
-DTSTART:20261121T090000Z
+DTSTART:20261121T080000Z
 DTEND:20261121T150000Z
 SUMMARY:Being Human — hyht
-DESCRIPTION:Simple practices to enrich and balance your daily life. Details:
+DESCRIPTION:Doors open 09:00\, we begin at 09:30. Lunch is provided\; part of
+  the day is outside. Details:
   https://beinghuman.thebackend.ch/
 LOCATION:Dorfzentrum Albisrieden\, 8047 Zürich
 URL:https://beinghuman.thebackend.ch/

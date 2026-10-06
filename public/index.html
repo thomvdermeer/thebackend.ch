@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Being Human — a one-day workshop in Zürich | hyht</title>
-    <meta name="description" content="Simple practices to enrich and balance your daily life. A one-day workshop for personal transformation with Rieneke, Divina and Thom. Saturday 21 November 2026, 10:00–16:00, Dorfzentrum Albisrieden, Zürich.">
+    <meta name="description" content="Simple practices to enrich and balance your daily life. A one-day workshop for personal transformation with Rieneke, Divina and Thom. Saturday 21 November 2026, 09:30–16:00 (doors 09:00), Dorfzentrum Albisrieden, Zürich.">
     <meta property="og:title" content="Being Human — a one-day workshop in Zürich">
     <meta property="og:description" content="Simple practices to enrich and balance your daily life — mind, nature, movement and breath. Saturday 21 November 2026, Dorfzentrum Albisrieden.">
     <meta property="og:type" content="website">
@@ -29,10 +29,11 @@
             eyebrow: "A one-day workshop · Zürich",
             hostedBy: "hyht",
             date: "2026-11-21",
-            startTime: "10:00",
+            startTime: "09:00",                             // calendar start = doors open
             endTime: "16:00",
             dateDisplay: "Saturday 21 November 2026",
-            timeDisplay: "10:00 – 16:00",
+            timeDisplay: "09:30 – 16:00",
+            doorsNote: "Doors open 09:00",
             pillDate: "21 Nov · Albisrieden",
 
             venueName: "Dorfzentrum Albisrieden",
@@ -68,24 +69,33 @@
                 cover: "images/cover.jpg",                  // poster — hero + social preview
             },
 
-            /* The three practices (mirrors the poster). Facilitator portraits:
-               add photo: "images/rieneke.jpg" etc. and it replaces the icon. */
-            practices: [
-                { icon: "images/icon-mind.jpg",
-                  title: "Get to know your inner instruments",
-                  focus: "Mind, emotions and body",
-                  text: "Learn to notice what moves in you — thoughts, feelings, sensations — and how they shape the way you respond. Practical ways to understand yourself with more clarity and kindness.",
-                  guide: "Rieneke", role: "Psychodynamic therapist & organisational psychologist" },
-                { icon: "images/icon-nature.jpg",
-                  title: "Experience yourself as part of nature",
-                  focus: "Open your senses, play, create",
-                  text: "Step out of the head and into the senses. Through attention, play and creative expression, rediscover your connection with the living world — and the calm and aliveness it brings.",
-                  guide: "Divina", role: "Ecologist & nature-based educator" },
-                { icon: "images/icon-move.jpg",
-                  title: "Move and breathe with joy",
-                  focus: "Lifelong tools that open new doorways",
-                  text: "Simple movement and breathing practices that restore energy, release tension and build resilience — tools you can return to for the rest of your life.",
-                  guide: "Thom", role: "Neuroscientist, movement & breathwork professional" },
+            /* The three practitioners (icons from the poster). Add photo: "images/rieneke.jpg"
+               to replace an icon with a portrait. */
+            practitioners: [
+                { icon: "images/icon-mind.jpg", name: "Rieneke", url: "https://rieneke-deelstra.com/en-evolve-light/",
+                  role: "psychodynamic therapist & organisational psychologist",
+                  text: "helps you get to know your inner instruments, so you can navigate life with more clarity." },
+                { icon: "images/icon-nature.jpg", name: "Divina", url: "https://hyht.ch/team",
+                  role: "ecologist, artist & forest bathing guide",
+                  text: "invites you to open your senses and experience yourself as part of nature, through play and creative expression." },
+                { icon: "images/icon-move.jpg", name: "Thom", url: "https://hyht.ch/team",
+                  role: "neuroscientist, movement & breathwork professional",
+                  text: "shares science-backed ways of moving and breathing that you can keep for life." },
+            ],
+
+            /* The day — durations as planned; "when" is shown only for the fixed anchors. */
+            program: [
+                { when: "09:00", length: "30 min", title: "Drop-in", text: "Arrive, have a tea, settle in." },
+                { when: "09:30", length: "30 min", title: "Welcome", text: "What this day is for, and how we will spend it together." },
+                { length: "1 h", title: "Getting to know each other", text: "Who is in the room, and what each of us is looking for today." },
+                { length: "30 min", title: "Your inner instruments", text: "With Rieneke — a guided look at the physical, emotional, mental and spiritual instruments you carry, followed by sharing what you noticed." },
+                { length: "Break", title: "Lunch", text: "Lunch is provided." },
+                { length: "30 min", title: "Breath & movement", text: "With Thom — how to use the breath in stressful situations, and feel for yourself how it changes your body." },
+                { length: "15 min", title: "The science behind it", text: "Why calm follows the breath: the nervous system, and what that means on an ordinary day." },
+                { length: "1 h", title: "Nervous system meets nature", text: "Exercises that combine scientific principles with the natural environment and the breath — a deep experience, with examples to take home." },
+                { length: "2 h", title: "Charging your battery in nature", text: "With Divina — how the body regulates itself through nature, colours and the senses; creativity and flow like a child; a conscious walk in nature." },
+                { length: "45 min", title: "Looking back", text: "Gathering what the day gave you, and what you will carry home." },
+                { when: "16:00", title: "Close" },
             ],
         };
 
@@ -163,7 +173,7 @@
     <div aria-hidden="true" class="absolute -left-32 top-1/3 w-[28rem] h-[28rem] bg-sage/30 blur-3xl drift"></div>
 
     <nav class="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
-        <a href="https://hyht.ch" aria-label="hyht"><img src="images/hyht-logo.png" alt="hyht" class="h-9 md:h-11 w-auto" style="filter:brightness(0);opacity:.82"></a>
+        <a href="https://hyht.ch" aria-label="hyht" class="inline-flex items-center bg-deep rounded-full px-4 py-2 shadow-md hover:bg-primary transition"><img src="images/hyht-logo.png" alt="hyht" class="h-7 md:h-8 w-auto"></a>
         <a href="#tickets" class="text-sm tracking-[.2em] uppercase text-deep/80 hover:text-deep transition">Tickets</a>
     </nav>
 
@@ -200,9 +210,8 @@
     <p class="reveal relative text-primary tracking-[.25em] uppercase text-sm mb-6">The invitation</p>
     <h2 class="reveal relative font-display font-medium text-4xl md:text-6xl leading-tight text-deep mb-10">A day to come back<br class="hidden md:block"> to yourself.</h2>
     <div class="reveal reveal-slow relative text-xl md:text-2xl font-light leading-relaxed space-y-6 text-ink/85">
-        <p>Being Human is a one-day workshop for personal transformation — not by adding more to your life, but by returning to what is already there: your mind, your emotions, your body, and the living world you belong to.</p>
-        <p>Three facilitators from psychology, ecology and movement science guide you through simple, grounded practices. Each is designed to be taken home and woven into ordinary days, so the change doesn't end when the workshop does.</p>
-        <p>No prior experience needed — only curiosity, and the willingness to slow down for a day.</p>
+        <p>Being Human is a one-day workshop for personal transformation. The day starts from who we are: human beings, with a mind that thinks, emotions that move us, a body that communicates, and an environment we belong to.</p>
+        <p>Together we explore how to connect with your essence, so that you feel grounded, steady and free to act — also when life asks a lot of you. You learn to recognise what is happening in the moment and how to find your way through it.</p>
     </div>
 </section>
 
@@ -221,9 +230,18 @@
 <section class="relative bg-leaf/70 px-6 md:px-12 py-24 md:py-32 overflow-hidden">
     <div aria-hidden="true" class="absolute -right-40 -top-20 w-[30rem] h-[30rem] bg-sage/25 blur-3xl drift"></div>
     <div class="relative max-w-6xl mx-auto">
-        <p class="reveal text-primary tracking-[.25em] uppercase text-sm mb-6">Three ways in</p>
-        <h2 class="reveal font-display font-medium text-4xl md:text-5xl text-deep mb-16">Mind, nature, body.</h2>
-        <div id="practices" class="grid md:grid-cols-3 gap-12 md:gap-10"></div>
+        <p class="reveal text-primary tracking-[.25em] uppercase text-sm mb-6">Three doorways</p>
+        <h2 class="reveal font-display font-medium text-4xl md:text-5xl text-deep mb-6">A full day with three practitioners.</h2>
+        <p class="reveal text-xl md:text-2xl font-light text-ink/80 mb-16 max-w-3xl">Each of them opens a different doorway.</p>
+        <div id="practitioners" class="grid md:grid-cols-3 gap-12 md:gap-10"></div>
+
+        <div class="reveal mt-24 md:mt-28 max-w-3xl">
+            <p class="text-primary tracking-[.25em] uppercase text-sm mb-6">What you take home</p>
+            <div class="text-xl md:text-2xl font-light leading-relaxed space-y-6 text-ink/85">
+                <p>Practical tools to regulate yourself, meet difficulties with more ease, and experience everyday life more profoundly — all simple enough to weave into your routine.</p>
+                <p class="text-deep">You will leave feeling calm, connected and clear about what matters most to you.</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -231,21 +249,9 @@
 <section class="px-6 md:px-12 py-24 md:py-32">
     <div class="max-w-4xl mx-auto">
         <p class="reveal text-primary tracking-[.25em] uppercase text-sm mb-6">The day</p>
-        <h2 class="reveal font-display font-medium text-4xl md:text-5xl text-deep mb-14">Six hours, one gentle arc.</h2>
-        <ol>
-            <li class="reveal flex gap-6 md:gap-10 py-6 border-t border-primary/15">
-                <span class="text-primary font-semibold w-16 shrink-0">10:00</span>
-                <div><h3 class="font-semibold text-xl">Arrival & opening</h3><p class="text-ink/70 mt-1">Settle in, meet the group, and set an intention for the day.</p></div>
-            </li>
-            <li class="reveal flex gap-6 md:gap-10 py-6 border-t border-primary/15">
-                <span class="text-primary font-semibold w-16 shrink-0" aria-hidden="true">·</span>
-                <div><h3 class="font-semibold text-xl">Three practices</h3><p class="text-ink/70 mt-1">Guided sessions with Rieneke, Divina and Thom — with time to rest and reflect in between.</p></div>
-            </li>
-            <li class="reveal flex gap-6 md:gap-10 py-6 border-y border-primary/15">
-                <span class="text-primary font-semibold w-16 shrink-0">16:00</span>
-                <div><h3 class="font-semibold text-xl">Integration & closing</h3><p class="text-ink/70 mt-1">Gather what you discovered, and how to carry it into daily life.</p></div>
-            </li>
-        </ol>
+        <h2 class="reveal font-display font-medium text-4xl md:text-5xl text-deep mb-4">One day, one gentle arc.</h2>
+        <p class="reveal text-ink/60 text-lg mb-14">Doors open at 09:00 — we begin together at 09:30 and close at 16:00.</p>
+        <ol id="program"></ol>
     </div>
 </section>
 
@@ -288,10 +294,10 @@
 <section class="bg-mist px-6 md:px-12 py-24">
     <div class="max-w-3xl mx-auto">
         <h2 class="reveal font-display font-medium text-3xl md:text-4xl text-deep mb-10">Good to know</h2>
-        <!-- TODO: confirm what to bring, lunch, and cancellation policy -->
         <div class="space-y-6 text-lg">
             <details class="reveal group border-b border-primary/15 pb-4"><summary class="cursor-pointer font-semibold list-none flex justify-between">Do I need any experience? <span class="text-primary group-open:rotate-45 transition">+</span></summary><p class="mt-3 text-ink/70 font-light">None. Every practice is introduced from the ground up and can be adapted to your body and pace.</p></details>
-            <details class="reveal group border-b border-primary/15 pb-4"><summary class="cursor-pointer font-semibold list-none flex justify-between">What should I bring? <span class="text-primary group-open:rotate-45 transition">+</span></summary><p class="mt-3 text-ink/70 font-light">Comfortable clothes you can move in, warm layers, a water bottle, and a notebook if you like to write things down.</p></details>
+            <details class="reveal group border-b border-primary/15 pb-4"><summary class="cursor-pointer font-semibold list-none flex justify-between">What should I bring? <span class="text-primary group-open:rotate-45 transition">+</span></summary><p class="mt-3 text-ink/70 font-light">Warm, weather-appropriate clothing and shoes — part of the day is outside, whatever the weather. A water bottle, a light snack, and a notebook. Lunch is provided.</p></details>
+            <details class="reveal group border-b border-primary/15 pb-4"><summary class="cursor-pointer font-semibold list-none flex justify-between">Is lunch included? <span class="text-primary group-open:rotate-45 transition">+</span></summary><p class="mt-3 text-ink/70 font-light">Yes — lunch is provided. Bring a light snack for the breaks if you like.</p></details>
             <details class="reveal group border-b border-primary/15 pb-4"><summary class="cursor-pointer font-semibold list-none flex justify-between">Cancellation policy <span class="text-primary group-open:rotate-45 transition">+</span></summary><p class="mt-3 text-ink/70 font-light">Full refund until 14 days before the workshop. After that, your ticket is transferable to someone else — just let us know.</p></details>
             <details class="reveal group border-b border-primary/15 pb-4"><summary class="cursor-pointer font-semibold list-none flex justify-between">Questions? <span class="text-primary group-open:rotate-45 transition">+</span></summary><p class="mt-3 text-ink/70 font-light">Write to us at <a class="text-primary underline" id="faq-email" href="#"></a> or on <a class="text-primary underline" id="faq-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>.</p></details>
         </div>
@@ -357,7 +363,7 @@
     $("hero-eyebrow").textContent = EVENT.eyebrow;
     $("hero-title").innerHTML = EVENT.title.replace(" ", "<br>");
     $("hero-subtitle").textContent = EVENT.subtitle;
-    $("hero-when").textContent = EVENT.dateDisplay + " · " + EVENT.timeDisplay + " · " + EVENT.venueName;
+    $("hero-when").textContent = EVENT.dateDisplay + " · " + EVENT.timeDisplay + " · " + EVENT.venueName + " · " + EVENT.doorsNote;
     $("hero-pricenote").textContent = isLaunch
         ? "Launch price" + (launchEnd ? " until " + launchEnd : "") + " — regularly " + fmtPrice(EVENT.priceRegular)
         : "";
@@ -371,20 +377,25 @@
     $("marquee-b").textContent = words.repeat(6);
     $("pill-date").textContent = EVENT.pillDate;
 
-    /* practices */
-    $("practices").innerHTML = EVENT.practices.map((p, i) => `
+    /* practitioners */
+    $("practitioners").innerHTML = EVENT.practitioners.map((p, i) => `
         <article class="reveal flex flex-col" style="transition-delay:${i * 140}ms">
             <div class="blob overflow-hidden w-32 h-32 md:w-36 md:h-36 mb-8 shadow-lg ring-8 ring-paper/70">
-                <img src="${p.photo || p.icon}" alt="${p.photo ? p.guide : ""}" class="w-full h-full object-cover">
+                <img src="${p.photo || p.icon}" alt="${p.photo ? p.name : ""}" class="w-full h-full object-cover">
             </div>
-            <h3 class="font-display font-medium text-2xl text-deep leading-snug">${p.title}</h3>
-            <p class="text-primary mt-2">${p.focus}</p>
-            <p class="text-ink/75 font-light text-lg leading-relaxed mt-4 flex-1">${p.text}</p>
-            <div class="mt-6 pt-5 border-t border-primary/20">
-                <p class="font-semibold">With ${p.guide}</p>
-                <p class="text-ink/60 text-sm italic mt-0.5">${p.role}</p>
-            </div>
+            <h3 class="font-display font-medium text-2xl text-deep leading-snug">
+                <a href="${p.url}" target="_blank" rel="noopener" class="underline underline-offset-4 decoration-primary/30 hover:decoration-primary hover:text-primary transition">${p.name}</a>
+            </h3>
+            <p class="text-ink/60 text-sm italic mt-1">${p.role}</p>
+            <p class="text-ink/80 font-light text-lg leading-relaxed mt-4 flex-1"><span class="text-deep">${p.name}</span> ${p.text}</p>
         </article>`).join("");
+
+    /* the day */
+    $("program").innerHTML = EVENT.program.map((b, i, all) => `
+        <li class="reveal flex gap-6 md:gap-10 py-5 border-t border-primary/15${i === all.length - 1 ? " border-b" : ""}">
+            <span class="w-20 md:w-24 shrink-0 text-primary font-semibold leading-snug">${b.when || ""}<span class="block text-ink/50 text-sm font-normal">${b.length || ""}</span></span>
+            <div><h3 class="font-semibold text-xl">${b.title}</h3>${b.text ? `<p class="text-ink/70 mt-1">${b.text}</p>` : ""}</div>
+        </li>`).join("");
 
     /* venue */
     $("venue-name").textContent = EVENT.venueName;
