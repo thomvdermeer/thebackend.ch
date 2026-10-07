@@ -85,7 +85,6 @@ export default {
             if (dj.events && dj.events.length) return new Response("duplicate ignored (global)", { status: 200 });
         }
 
-        const name = (s.customer_details?.name || "there").split(" ")[0];
         const tickets = parseInt(s.metadata?.tickets || "1", 10);
         const tier = s.metadata?.tier === "launch" ? "launch price"
                    : s.metadata?.tier === "guest" ? "our guest"
@@ -93,6 +92,11 @@ export default {
         const total = s.amount_total === 0 ? "Free"
                     : (s.currency || "chf").toUpperCase() + " " + (s.amount_total / 100).toFixed(2).replace(/\.00$/, "");
         const attendees = (s.custom_fields || []).find(f => f.key === "attendees")?.text?.value || "";
+        /* Stripe only fills customer_details.name when a payment method is
+           collected (a 100 % promo code skips that) — fall back to the
+           first attendee name typed into the form. */
+        const fullName = s.customer_details?.name || attendees.split(/[,&\n]/)[0].trim() || "";
+        const name = fullName.split(" ")[0] || "there";
 
         const res = await fetch("https://api.brevo.com/v3/smtp/email", {
             method: "POST",
@@ -125,7 +129,6 @@ export default {
            (reminders, thank-you) reach them. Non-fatal: a hiccup here must
            not fail the webhook — the confirmation email already went out. */
         if (env.BREVO_LIST_ID) {
-            const fullName = s.customer_details?.name || "";
             await fetch("https://api.brevo.com/v3/contacts", {
                 method: "POST",
                 headers: { "api-key": env.BREVO_API_KEY, "content-type": "application/json" },
