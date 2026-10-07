@@ -21,7 +21,7 @@ if (!KEY) {
 }
 
 const EVENT_NAME = "Being Human — one-day workshop, Zürich";
-const EVENT_DATE = "Saturday 21 November 2026, 10:00–16:00, Dorfzentrum Albisrieden, 8047 Zürich";
+const EVENT_DATE = "Saturday 21 November 2026, 09:00–16:00 (we begin at 09:30), Dorfzentrum Albisrieden, Triemlistrasse 2, 8047 Zürich";
 const CURRENCY = "chf";
 const TIERS = { launch: 210 };
 const DISCOUNT = () => 0;   // no group discounts for this event
